@@ -6,7 +6,7 @@ from transformers import pipeline
 
 # set up a question-answering pipeline
 
-qa_pipeline = pipeline("question-answering",model="distilbert-base-cased-distilled-squad")
+qa_pipeline = pipeline("question-answering",model="distilbert-base-cased-distilled-squad",tokenizer="distilbert-base-cased", padding=True, truncation=True)
 #qa_pipeline = pipeline("question-answering",model="bert-large-uncased-whole-word-masking-finetuned-squad")
 # this function is used for extracting text from pdf
 def extract_text_from_pdf(pdf_file):
