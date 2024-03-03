@@ -1,8 +1,4 @@
 # importing dependicies
-import os
-
-# Install required dependencies
-os.system('pip install -r requirements.txt')
 import streamlit as st
 import PyPDF2
 from transformers import pipeline
