@@ -1,4 +1,5 @@
 # importing dependicies
+import os
 import streamlit as st
 import PyPDF2
 from transformers import pipeline
