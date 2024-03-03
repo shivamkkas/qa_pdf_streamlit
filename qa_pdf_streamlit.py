@@ -30,8 +30,10 @@ def main():
 
     if uploaded_file is not None:
         # saved uploaded file in "uploads " folder
-        with open(os.path.join("uploads", uploaded_file.name), "wb") as f:
-            f.write(uploaded_file.getbuffer())
+        if not os.path.exists("uploads"):
+            os.makedirs("uploads")
+            with open(os.path.join("uploads", uploaded_file.name), "wb") as f:
+                f.write(uploaded_file.getbuffer())
 
         # extracting text from pdf using function"extract_text_from_pdf"
         pdf_text = extract_text_from_pdf(os.path.join("uploads", uploaded_file.name))
